@@ -1,66 +1,97 @@
-/* style.css */
-
+/* General Body Styling */
 body {
-    font-family: "PingFang SC", "Microsoft YaHei", sans-serif; /* 常用中文字体 */
-    line-height: 1.8; /* 行高，提高阅读舒适度 */
-    background-color: #f8f8f8; /* 浅灰色背景 */
-    color: #333; /* 深灰色字体 */
+    font-family: "Noto Serif SC", "Source Han Serif SC", "宋体", SimSun, serif; /* 中文衬线字体，提高阅读舒适度 */
+    line-height: 1.9; /* 增加行高，提升阅读流畅感 */
     margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 30px 20px; /* 页面内边距，留出空间 */
+    background-color: #fcf8ed; /* 柔和的米黄色背景，类似起点阅读背景色 */
+    color: #333; /* 深灰色文字，确保对比度高且不刺眼 */
+    word-wrap: break-word; /* 确保长单词或无空格的中文不会溢出 */
+    -webkit-font-smoothing: antialiased; /* 使字体更平滑 */
+    -moz-osx-font-smoothing: grayscale; /* 使字体更平滑 */
 }
 
+/* Container for the novel text */
 .container {
-    max-width: 800px; /* 小说内容的最大宽度，避免行过长难以阅读 */
-    margin: 0 auto; /* 居中显示 */
-    background-color: #fff; /* 白色内容区域背景 */
-    padding: 40px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* 轻微的阴影效果 */
-    border-radius: 8px; /* 圆角边框 */
+    max-width: 860px; /* 适当增加最大宽度，适应更多内容 */
+    margin: 40px auto; /* 居中显示，并提供上下外边距 */
+    padding: 40px 60px; /* 内边距，使内容不贴边 */
+    background-color: #ffffff; /* 内容区域使用纯白色，与背景形成对比 */
+    border-radius: 12px; /* 更圆润的边角，体现“光滑”感 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* 更柔和、更明显的阴影，增加浮动感和层次 */
+    overflow: hidden; /* 防止内容溢出，保持容器整洁 */
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee; /* 标题下方细线 */
-}
-
+/* Heading Styling */
 h1 {
-    font-size: 2.5em;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-family: "Noto Serif SC", "Source Han Serif SC", "黑体", SimHei, sans-serif; /* 标题使用更粗的字体，增加力量感 */
+    font-size: 2.5em; /* 标题字号加大 */
+    color: #2a2a2a; /* 标题颜色更深，与内容区分 */
+    text-align: center;
+    margin-bottom: 50px; /* 标题下方间距增大 */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* 浅色下划线 */
+    letter-spacing: 0.05em; /* 字母间距微调 */
 }
 
-.author {
-    font-size: 1.1em;
-    color: #7f8c8d;
+/* Paragraph Styling */
+p {
+    font-size: 1.15em; /* 段落文字字号微调，更适合长时间阅读 */
+    margin-bottom: 1.8em; /* 增加段落间距 */
+    text-indent: 2em; /* 首行缩进 */
+    text-align: justify; /* 两端对齐，使文本块更整齐 */
 }
 
-.novel-content p {
-    margin-bottom: 1.5em; /* 段落间距 */
-    text-indent: 2em; /* 首行缩进两个字符 */
-    font-size: 1.1em; /* 段落字体大小 */
+/* Specific styling for the initial mission details */
+p:first-of-type {
+    text-indent: 0; /* 任务信息不缩进 */
+    text-align: left;
+    font-size: 1.05em; /* 任务信息字号微调 */
+    color: #666; /* 任务信息颜色稍浅 */
+    margin-top: -30px; /* 调整位置更靠近标题 */
+    margin-bottom: 3em; /* 任务信息下方间距增加，与正文分隔 */
 }
 
-/* 优化移动设备显示 */
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .container {
+        max-width: 90%; /* 减小最大宽度，适应小屏幕 */
+        margin: 30px auto;
+        padding: 30px 40px;
+    }
+}
+
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 15px;
     }
-
     .container {
-        padding: 20px;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
+        margin: 20px auto;
+        padding: 25px 30px;
     }
-
     h1 {
         font-size: 2em;
+        margin-bottom: 40px;
     }
+    p {
+        font-size: 1.05em;
+    }
+}
 
-    .novel-content p {
+@media (max-width: 480px) {
+    .container {
+        margin: 15px auto;
+        padding: 20px 20px;
+    }
+    h1 {
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+    p {
         font-size: 1em;
+    }
+    p:first-of-type {
+        margin-top: -20px;
+        margin-bottom: 2.5em;
     }
 }
